@@ -127,7 +127,7 @@ def download_pdf(file_path):
 
 # MAIN App
 def main():
-    st.title("Mock Interview System with NLP Insights")
+    st.title("AI Powered Mock Interview System")
     uploaded_file = st.file_uploader("Upload your resume (PDF/DOCX)", type=["pdf", "docx"])
 
     if uploaded_file:
