@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 import time
 
 import spacy
+import subprocess
 from textblob import TextBlob
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -23,7 +24,12 @@ if "GROQ_API_KEY" not in st.secrets:
 else:
     chat = ChatGroq(api_key=st.secrets["GROQ_API_KEY"], model_name="llama3-70b-8192")
 
-nlp = spacy.load("en_core_web_sm")
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    print("Downloading spaCy model...")
+    subprocess.check_call([sys.executable, "-m", "spacy", "download", "en_core_web_sm"])
+    nlp = spacy.load("en_core_web_sm")
 
 # Parse PDF
 def parse_pdf(file):
