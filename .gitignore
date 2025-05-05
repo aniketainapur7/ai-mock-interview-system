@@ -1,0 +1,53 @@
+.env
+.venv
+app4.py
+app5.py
+app6.py
+temp.py
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+env/
+venv/
+ENV/
+*.env
+*.venv
+
+# Jupyter Notebook checkpoints (if any)
+.ipynb_checkpoints
+
+# Pytest cache
+.pytest_cache/
+
+# VSCode settings
+.vscode/
+
+# macOS system files
+.DS_Store
+
+# Environment/config files
+.env
+.env.*
+
+# Streamlit cache
+.streamlit/
+
+# Log files
+*.log
+
+# Output folders (if you generate files/reports)
+output/
+reports/
+*.pdf
+
+# Data files (optional - only if generated at runtime or are large)
+data/
+*.csv
+*.xlsx
+.deployment/app7.py
+deployment/app7.py
+deployment/requirements.txt
