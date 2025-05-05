@@ -6,11 +6,11 @@ from langchain.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from fpdf import FPDF
 import os
+import sys
 from dotenv import load_dotenv
 import time
 
 import spacy
-import subprocess
 from textblob import TextBlob
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -28,7 +28,7 @@ try:
     nlp = spacy.load("en_core_web_sm")
 except OSError:
     print("Downloading spaCy model...")
-    subprocess.check_call([sys.executable, "-m", "spacy", "download", "en_core_web_sm"])
+    os.system(f"{sys.executable} -m spacy download en_core_web_sm")
     nlp = spacy.load("en_core_web_sm")
 
 # Parse PDF
